@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "377495558483",
+    "firebase_url": "https://cuarentena-6f8cc.firebaseio.com",
+    "project_id": "cuarentena-6f8cc",
+    "storage_bucket": "cuarentena-6f8cc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:377495558483:android:5067ace9ddc8bfb22e29a6",
+        "android_client_info": {
+          "package_name": "com.samuelm.quehacerencuarentena"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "377495558483-44ru9422ghqq6hbfq8pokt5bm67jb30o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.samuelm.quehacerencuarentena",
+            "certificate_hash": "2ac3535817d01d09e6d50f18fdd62aa2e2486666"
+          }
+        },
+        {
+          "client_id": "377495558483-7jhfvgjg6k1reduvmovgq5ap29q9io8m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUqSl9O0DLveot1tOLkZtYRnqnajjpRC4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "377495558483-7jhfvgjg6k1reduvmovgq5ap29q9io8m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -14,8 +14,13 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import java.util.*
 
 class MainActivity : AppCompatActivity(), SensorEventListener {
@@ -41,6 +46,10 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
     lateinit var background_layout: ConstraintLayout
     lateinit var background_animation: AnimationDrawable
 
+    private val database = FirebaseDatabase.getInstance()
+    private val reference = database.getReference()
+    private var counter: Int = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -59,6 +68,21 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
 
         ball_animation = AnimationUtils.loadAnimation(this, R.anim.shake)
 
+        reference.addValueEventListener(object: ValueEventListener{
+            override fun onCancelled(p0: DatabaseError) {
+                Toast.makeText(applicationContext, "Necesitas estar conectado a internet", Toast.LENGTH_SHORT).show()
+                println("Error: ${p0.details}")
+
+            }
+
+            override fun onDataChange(p0: DataSnapshot) {
+                var a = p0.child("Counter").value as Long
+                println("Counter: $a")
+                counter = a.toInt()
+//                counter =  as Int
+            }
+
+        })
 
     }
 
@@ -80,7 +104,7 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
     override fun onSensorChanged(event: SensorEvent?) {
         if(event?.sensor?.type == Sensor.TYPE_ACCELEROMETER){
             if(isShakeEnough(event?.values[0], event?.values[1], event?.values[2])){
-                showAnswer(getAnswer(), false)
+                getRandomAnswer()
             }
         }
     }
@@ -128,7 +152,22 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
         vibrator.vibrate(VIBRATE_TIME)
     }
 
-    private fun getAnswer(): String{
-        return "Absolutamente nada"
+    private fun getRandomAnswer(){
+        val random = (0..counter).random()
+        val path = "Frase$random"
+        var answer = ""
+
+        reference.addValueEventListener(object: ValueEventListener{
+            override fun onCancelled(p0: DatabaseError) {
+                answer = "Agita mas duro, jevita"
+                showAnswer(answer, false)
+            }
+
+            override fun onDataChange(p0: DataSnapshot) {
+                answer = p0.child(path).value as String
+                showAnswer(answer, false)
+            }
+
+        })
     }
 }
