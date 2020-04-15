@@ -54,7 +54,7 @@
         app:exceededTextColor="#ff0000"
         app:layout_constraintBottom_toBottomOf="@+id/phrase_txt"
         app:layout_constraintEnd_toEndOf="parent"
-        app:maxCharacters="10" />
+        app:maxCharacters="120" />
 
     <Button
         android:id="@+id/add_btn"
