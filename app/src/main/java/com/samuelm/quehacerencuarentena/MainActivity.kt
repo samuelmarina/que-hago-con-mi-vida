@@ -1,6 +1,7 @@
 package com.samuelm.quehacerencuarentena
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.drawable.AnimationDrawable
 import android.hardware.Sensor
 import android.hardware.SensorEvent
@@ -12,6 +13,7 @@ import android.view.View
 import android.view.animation.AlphaAnimation
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -40,6 +42,7 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
 
     private lateinit var frase_txt: TextView
     private lateinit var magic_ball_img: ImageView
+    private lateinit var add_phrase_btn: Button
 
     private lateinit var ball_animation: Animation
 
@@ -48,7 +51,11 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
 
     private val database = FirebaseDatabase.getInstance()
     private val reference = database.getReference()
-    private var counter: Int = 0
+
+    companion object{
+        var counter: Int = 0
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,6 +68,7 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
 
         frase_txt = findViewById(R.id.frase_txt) as TextView
         magic_ball_img = findViewById(R.id.magic_ball_img) as ImageView
+        add_phrase_btn = findViewById(R.id.add_phrase_btn) as Button
 
         vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
         sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
@@ -77,12 +85,15 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
 
             override fun onDataChange(p0: DataSnapshot) {
                 var a = p0.child("Counter").value as Long
-                println("Counter: $a")
                 counter = a.toInt()
-//                counter =  as Int
             }
 
         })
+
+        add_phrase_btn.setOnClickListener {
+            val intent = Intent(this, AddPhraseActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 
