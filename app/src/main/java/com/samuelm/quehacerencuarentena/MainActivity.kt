@@ -23,7 +23,6 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import java.util.*
 
 class MainActivity : AppCompatActivity(), SensorEventListener {
     val FADE_DURATION: Int = 1500
@@ -31,7 +30,6 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
     val VIBRATE_TIME: Long = 250
     val THRESHOLD: Int = 240
     val SHAKE_COUNT: Int = 2
-    private var RANDOM: Random = Random()
     private lateinit var vibrator: Vibrator
     private lateinit var sensorManager: SensorManager
     private lateinit var sensor: Sensor

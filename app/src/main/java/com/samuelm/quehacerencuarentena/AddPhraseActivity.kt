@@ -1,5 +1,6 @@
 package com.samuelm.quehacerencuarentena
 
+import android.graphics.Color
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -9,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.google.firebase.database.FirebaseDatabase
 import com.samuelm.quehacerencuarentena.MainActivity.Companion.counter
+import com.wafflecopter.charcounttextview.CharCountTextView
 import net.yslibrary.android.keyboardvisibilityevent.util.UIUtil
 
 class AddPhraseActivity : AppCompatActivity() {
@@ -17,6 +19,7 @@ class AddPhraseActivity : AppCompatActivity() {
     private lateinit var phrase_txt: EditText
     private lateinit var add_btn: Button
     private lateinit var background_layout: ConstraintLayout
+    private lateinit var text_counter: CharCountTextView
 
     private val database = FirebaseDatabase.getInstance()
     private val reference = database.getReference()
@@ -29,6 +32,24 @@ class AddPhraseActivity : AppCompatActivity() {
         phrase_txt = findViewById(R.id.phrase_txt) as EditText
         add_btn = findViewById(R.id.add_btn) as Button
         background_layout = findViewById(R.id.background_layout) as ConstraintLayout
+        text_counter = findViewById(R.id.text_counter) as CharCountTextView
+
+        text_counter.setEditText(phrase_txt)
+        text_counter.setCharCountChangedListener(object: CharCountTextView.CharCountChangedListener{
+            override fun onCountChanged(p0: Int, p1: Boolean) {
+                if(p1){
+                    add_btn.isEnabled = false
+                    add_btn.isClickable = false
+                    add_btn.setTextColor(Color.DKGRAY)
+                }
+                else{
+                    add_btn.isEnabled = true
+                    add_btn.isClickable = true
+                    add_btn.setTextColor(resources.getColor(R.color.textColor))
+                }
+            }
+
+        })
 
         back_btn.setOnClickListener {
             finish()

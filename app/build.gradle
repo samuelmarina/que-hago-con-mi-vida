@@ -47,4 +47,7 @@ dependencies {
 
     //KeyboardVisibilityEvent
     implementation 'net.yslibrary.keyboardvisibilityevent:keyboardvisibilityevent:3.0.0-RC2'
+
+    //CharCountTextView
+    implementation 'com.github.broakenmedia:CharCountTextView:v1.0'
 }

@@ -44,6 +44,18 @@
         app:layout_constraintTop_toBottomOf="@+id/add_phrase_txt"
         tools:text="HOLA" />
 
+    <com.wafflecopter.charcounttextview.CharCountTextView
+        android:id="@+id/text_counter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="15dp"
+        android:textColor="#D0FFFFFF"
+        app:exceededTextColor="#ff0000"
+        app:layout_constraintBottom_toBottomOf="@+id/phrase_txt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:maxCharacters="10" />
+
     <Button
         android:id="@+id/add_btn"
         android:layout_width="206dp"
@@ -65,5 +77,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/actionModeCloseDrawable" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
