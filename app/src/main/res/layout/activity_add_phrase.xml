@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_anim"
+    android:id="@+id/background_layout"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/add_phrase_txt"
+        android:layout_width="354dp"
+        android:layout_height="78dp"
+        android:layout_marginTop="80dp"
+        android:fontFamily="sans-serif-light"
+        android:text="ESCRIBE TU FRASE ACA BAJO CHAMIT@"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/phrase_txt"
+        android:layout_width="352dp"
+        android:layout_height="197dp"
+        android:background="#A3030303"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:text="AGREGA TU FRASE"
+        android:textColor="#FFFFFF"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="187dp"
+        an/>
+</androidx.constraintlayout.widget.ConstraintLayout>
