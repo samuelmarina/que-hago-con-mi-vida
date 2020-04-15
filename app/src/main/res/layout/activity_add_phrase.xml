@@ -14,7 +14,7 @@
         android:layout_height="78dp"
         android:layout_marginTop="80dp"
         android:fontFamily="sans-serif-light"
-        android:text="ESCRIBE TU FRASE ACA BAJO CHAMIT@"
+        android:text="ESCRIBE TU FRASE ACÁ ABAJO CHAMIT@"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
@@ -26,15 +26,44 @@
 
     <EditText
         android:id="@+id/phrase_txt"
-        android:layout_width="352dp"
-        android:layout_height="197dp"
-        android:background="#A3030303"
+        android:layout_width="380dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custom_textview"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
-        android:text="AGREGA TU FRASE"
+        android:paddingStart="20dp"
+        android:paddingTop="20dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="20dp"
         android:textColor="#FFFFFF"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="187dp"
-        an/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_phrase_txt"
+        tools:text="HOLA" />
+
+    <Button
+        android:id="@+id/add_btn"
+        android:layout_width="206dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custom_button"
+        android:text="agrégala"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phrase_txt" />
+
+    <ImageView
+        android:id="@+id/back_btn"
+        android:layout_width="28dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="?attr/actionModeCloseDrawable" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
