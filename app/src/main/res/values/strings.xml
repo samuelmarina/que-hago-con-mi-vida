@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">Que hacer en cuarentena</string>
+    <string name="app_name">QCHCMV</string>
+    <string name="WritePhrase">ESCRIBE TU FRASE ACÁ ABAJO CHAMIT@</string>
+    <string name="AddPhrase">agrégala</string>
+    <string name="BackButton">Back button</string>
+    <string name="MagicBallImg">Magic Ball Image</string>
+    <string name="AddPhraseBtn">Agrega tu frase</string>
+    <string name="Title">Title image</string>
 </resources>

@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:background="@drawable/background_anim"
     android:id="@+id/background_layout"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:screenOrientation="portrait">
 
     <TextView
         android:id="@+id/add_phrase_txt"
@@ -14,7 +15,7 @@
         android:layout_height="78dp"
         android:layout_marginTop="80dp"
         android:fontFamily="sans-serif-light"
-        android:text="ESCRIBE TU FRASE ACÁ ABAJO CHAMIT@"
+        android:text="@string/WritePhrase"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
@@ -29,20 +30,21 @@
         android:layout_width="384dp"
         android:layout_height="260dp"
         android:layout_marginTop="20dp"
+        android:autofillHints="Escribe algo puesssss"
         android:background="@drawable/custom_textview"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
         android:paddingStart="20dp"
         android:paddingTop="20dp"
-        android:paddingRight="20dp"
+        android:paddingEnd="20dp"
         android:paddingBottom="20dp"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/add_phrase_txt"
-        tools:text="HOLA" />
+        tools:ignore="LabelFor"/>
 
     <com.wafflecopter.charcounttextview.CharCountTextView
         android:id="@+id/text_counter"
@@ -62,7 +64,7 @@
         android:layout_height="53dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/custom_button"
-        android:text="agrégala"
+        android:text="@string/AddPhrase"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -74,6 +76,7 @@
         android:layout_height="33dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="30dp"
+        android:contentDescription="@string/BackButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/actionModeCloseDrawable" />
