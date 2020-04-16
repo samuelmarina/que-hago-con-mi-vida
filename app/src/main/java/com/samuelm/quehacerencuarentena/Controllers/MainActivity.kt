@@ -73,7 +73,6 @@ class MainActivity : AppCompatActivity(), DatabaseDelegate {
         vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
         sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
         ShakeManager.shared.initialize(sensorManager, vibrator)
-//        sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)
 
         ball_animation = AnimationUtils.loadAnimation(this,
             R.anim.shake
