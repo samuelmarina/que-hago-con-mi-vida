@@ -1,61 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/background_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_anim"
-    android:id="@+id/background_layout"
-    tools:context=".MainActivity">
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/magic_ball_img"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:contentDescription="@string/MagicBallImg"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/magic_ball" />
-
-    <TextView
-        android:id="@+id/frase_txt"
-        android:layout_width="187dp"
-        android:layout_height="112dp"
-        android:layout_marginTop="40dp"
-        android:gravity="center"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/magic_ball_img"
-        app:layout_constraintEnd_toEndOf="@+id/magic_ball_img"
-        app:layout_constraintStart_toStartOf="@+id/magic_ball_img"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/add_phrase_btn"
-        android:layout_width="206dp"
-        android:layout_height="53dp"
-        android:layout_marginBottom="50dp"
-        android:background="@drawable/custom_button"
-        android:text="@string/AddPhraseBtn"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/title_img"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="412dp"
-        android:contentDescription="@string/Title"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/title" />
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        app:srcCompat="@drawable/title">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ImageView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/magic_ball_img"
+            android:layout_width="wrap_content"
+            android:layout_height="400dp"
+            android:contentDescription="@string/MagicBallImg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/magic_ball"></ImageView>
+
+        <TextView
+            android:id="@+id/frase_txt"
+            android:layout_width="187dp"
+            android:layout_height="112dp"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/magic_ball_img"
+            app:layout_constraintEnd_toEndOf="@+id/magic_ball_img"
+            app:layout_constraintStart_toStartOf="@+id/magic_ball_img"
+            app:layout_constraintTop_toTopOf="@+id/magic_ball_img" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/add_phrase_btn"
+            android:layout_width="206dp"
+            android:layout_height="53dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_button"
+            android:text="@string/AddPhraseBtn"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</LinearLayout>
