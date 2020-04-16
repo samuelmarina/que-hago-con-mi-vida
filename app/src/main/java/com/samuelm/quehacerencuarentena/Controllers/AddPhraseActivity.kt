@@ -1,4 +1,4 @@
-package com.samuelm.quehacerencuarentena
+package com.samuelm.quehacerencuarentena.Controllers
 
 import android.content.Context
 import android.graphics.Color
@@ -11,7 +11,8 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.samuelm.quehacerencuarentena.MainActivity.Companion.counter
+import com.samuelm.quehacerencuarentena.Controllers.MainActivity.Companion.counter
+import com.samuelm.quehacerencuarentena.R
 import com.wafflecopter.charcounttextview.CharCountTextView
 import net.yslibrary.android.keyboardvisibilityevent.util.UIUtil
 

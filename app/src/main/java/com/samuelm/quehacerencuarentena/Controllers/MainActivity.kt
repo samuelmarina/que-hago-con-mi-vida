@@ -1,4 +1,4 @@
-package com.samuelm.quehacerencuarentena
+package com.samuelm.quehacerencuarentena.Controllers
 
 import android.content.Context
 import android.content.Intent
@@ -18,9 +18,12 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.DatabaseError
+import com.samuelm.quehacerencuarentena.Constants
 import com.samuelm.quehacerencuarentena.Models.Database
 import com.samuelm.quehacerencuarentena.Models.DatabaseDelegate
 import com.samuelm.quehacerencuarentena.Models.ShakeManager
+import com.samuelm.quehacerencuarentena.R
+
 // SensorEventListener,
 class MainActivity : AppCompatActivity(), DatabaseDelegate {
 
@@ -72,7 +75,9 @@ class MainActivity : AppCompatActivity(), DatabaseDelegate {
         ShakeManager.shared.initialize(sensorManager, vibrator)
 //        sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)
 
-        ball_animation = AnimationUtils.loadAnimation(this, R.anim.shake)
+        ball_animation = AnimationUtils.loadAnimation(this,
+            R.anim.shake
+        )
 
 
 

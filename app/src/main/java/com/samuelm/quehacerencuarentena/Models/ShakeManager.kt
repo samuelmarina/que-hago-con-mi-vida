@@ -1,4 +1,4 @@
-package com.samuelm.quehacerencuarentena.Controllers
+package com.samuelm.quehacerencuarentena.Models
 
 import android.hardware.Sensor
 import android.hardware.SensorEvent
@@ -6,11 +6,10 @@ import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import android.os.Vibrator
 import com.samuelm.quehacerencuarentena.Constants
-import com.samuelm.quehacerencuarentena.MainActivity
+import com.samuelm.quehacerencuarentena.Controllers.MainActivity
 
 class ShakeManager: SensorEventListener {
-//    val THRESHOLD: Int = 150
-//    val SHAKE_COUNT: Int = 2
+
     private lateinit var vibrator: Vibrator
     private lateinit var sensorManager: SensorManager
     lateinit var sensor: Sensor
